@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Couragyn/pg#readme",
   "dependencies": {
+    "moment": "^2.18.1",
     "pg": "^6.1.5"
   }
 }
