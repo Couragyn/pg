@@ -10,7 +10,7 @@ var name = process.argv.slice(2);
 name = name.toString();
 
 
-var test = knex.select().from('famous_people').timeout(1000)
+knex.select().from('famous_people').timeout(1000)
   .where('last_name', '=', name)
   .orWhere('first_name', '=', name)
   .asCallback(function(err, rows) {
@@ -21,6 +21,7 @@ var test = knex.select().from('famous_people').timeout(1000)
       console.log(`No persons found by the name '${name}'`);
     }
 });
+
 knex.destroy();
 
 function result(rows) {
